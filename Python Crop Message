@@ -1,0 +1,39 @@
+message = "Codility we test coders."
+k = 40
+
+def cropMessage(message, k):
+  words_list = message.split()
+  #print(words_list)
+  sentence = ''
+  temp = ''
+  count = 0
+  if k >= len(message):
+      for i in reversed(range(len(message))):
+          if message[i] == ' ' and sentence == '':
+              continue
+          else:
+              for j in range(i+1):
+                  sentence += message[j]
+          break
+      return("k >= length is printing......"+ sentence ) 
+
+  elif k < len(message):
+      for letter in message:
+          if (letter == ' ' and count < k and len(sentence) > 0):
+              if (temp in words_list):
+                sentence = sentence +' ' + temp
+                temp = ''
+              count = count + 1
+          elif (letter == ' ' and count < k and len(sentence) == 0):
+              if (temp in words_list):
+                sentence = sentence + temp
+                temp = ''
+              count = count + 1
+          elif (letter != ' ' and count < k):
+              temp = temp + letter
+              count = count + 1           
+          else:
+              break
+      return ("k < length is printing......"+ sentence ) 
+
+print(cropMessage(message, k))
