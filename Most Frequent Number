@@ -3,7 +3,6 @@
 def most_frequent(lists):
 
   dictionary = {}
-  final = 0
   k = 0
   v = 0
 
