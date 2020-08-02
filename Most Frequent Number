@@ -19,8 +19,7 @@ def most_frequent(lists):
     if dictionary[d] > v:
       v = dictionary[d]
       k = d
-      continue
-    elif dictionary [d] < v:
+    else:
       continue
 
   return ("the most frequently repeated number is " + str(k) + " and is repeated " + str(v) + " times.")
