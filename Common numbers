@@ -1,4 +1,8 @@
+
 # given tw0 lists A, B, the function returns the common numbers.
+
+Procedure #1:
+
 def common_numbers(A,B):
 
   string = ''
@@ -19,3 +23,27 @@ def common_numbers(A,B):
 A = [1, 3, 4, 6, 7]
 B = [1, 2, 4, 5, 9, 10, 6]
 print(common_numbers(A,B))
+
+**********************************************************
+Procedure #2:
+
+def common_numbers(A,B):
+  a1 = 0
+  b1 = 0
+  lists =[]
+  while ((a1 < len(A)) and (b1 < len(B))):
+    if A[a1] == B[b1]:
+      lists.append(A[a1])
+      a1 += 1
+      b1 += 1
+    elif A[a1] > B[b1]:
+      b1 += 1
+    else:
+      a1 += 1
+
+  return lists
+
+A = [1, 3, 4, 6, 7]
+B = [1, 2, 4, 5, 9]
+print(common_numbers(A,B))
+  
