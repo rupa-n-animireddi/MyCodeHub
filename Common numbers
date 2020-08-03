@@ -1,17 +1,25 @@
 
 # given tw0 lists A, B, the function returns the common numbers.
 
-Procedure #1:
+Procedure #1: when the lists are unsorted
 
 def common_numbers(A,B):
 
   string = ''
-  for a in (A if len(A) < len(B) else B):
-    if a in B:
-      string += str(a)
-    else:
-      continue
+  if (len(A) <= len(B)):
+    for a in A:
+      if a in B:
+        string += str(a)
+      else:
+        continue
+  else:
+    for b in B:
+      if b in A:
+        string += str(b)
+      else:
+        continue
 
+    
   lists = [0]*len(string)
   count = 0 
   for s in string:
@@ -20,12 +28,12 @@ def common_numbers(A,B):
 
   return lists
 
-A = [1, 3, 4, 6, 7]
-B = [1, 2, 4, 5, 9, 10, 6]
+A = [1, 3, 4, 6, 7, 5, 2, 0]
+B = [1, 2, 4, 0, 5, 9, 10, 6]
 print(common_numbers(A,B))
 
 **********************************************************
-Procedure #2:
+Procedure #2: when the lists are sorted
 
 def common_numbers(A,B):
   a1 = 0
